@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Royal Enfield</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.min.css">
+        <style> 
+        * {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        :root {
+            --max-width: 1200px;
+            --primary-color: #c8232c;
+            --text-dark: #333;
+            --text-light: #777;
+            --extra-light: #f9f9f9;
+            --black: #000;
+            --white: #fff;
+        }
+        .main__heading {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: black;
+            margin: 2rem 0;
+        }
+        .main__heading .red {
+            color: #FF0000;
+        }
+        .section__container {
+            max-width : var(--max-width);
+            margin:auto;
+            padding: 1rem 0rem;
+        }
+        .section__header {
+            margin:auto;
+            padding-bottom: 0rem;
+            width: fit-content;
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .section__header:after {
+            width:0;
+        }
+        img {
+            width: 70%;
+            height:auto;
+            display: block;
+            margin: 0 auto;
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--extra-light);
+        }
+        nav {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav__logo img {
+            width:50px;
+            max-width:100px;
+        }
+        .nav__links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        .nav__links a{
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: 0.3s;
+        }
+        .nav__links a:hover {
+            color: var(--primary-color);
+        }
+        .header__container img {
+            max-width: 900px;
+        }
+        .story__container .section__header {
+            margin-bottom: 4rem;
+        }
+        .story__container p {
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        .evolution__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .evolution__nav {
+            width:100%;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .evolution__nav a{
+            padding: 0.75rem 0;
+            font-weight: 500;
+             color: var(--text-dark);
+             border-top: 2px solid transparent;
+             transition: 0.3s;
+        }
+        .evolution__nav a:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .evolution__nav a:active {
+            color: var(--primary_color);
+            border-color: var(--primary-color);
+        }
+        .evolution__content p {
+            padding-top: 4rem;
+            border-top: 2px solid var(--text-light);
+        }
+        .feature {
+            position: relative;
+            background: linear-gradient(135deg, var(--black) 50%,transparent 50%);
+        }
+        .feature::before,
+        .feature::after {
+            position:absolute;
+            content: "";
+            background-color: var(--black);
+            inset: 0;
+            z-index:-1; 
+            clip-path: polygon(0 0,100% 0,100% 50%,0% 100%);
+            transform: skewY(-8deg);     
+        }
+        .feature::before {
+            -webkit-clip-path: polygon(0 0,100% 0,100% 50%,0% 100%);
+            clip-path: polygon(0 0,100% 50%, 100% 100%,0% 100%);
+            transform: skewY(-8deg);
+        }
+        .feature__container 
+        {
+            margin: 5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .feature__image img {
+            width: 100%; 
+            height: auto; 
+            max-width: 600px; 
+            display: block; 
+            margin: 0 auto;
+        }
+        .feature__content {
+           color: var(--white); 
+        }
+        .feature__content .section__header {
+            color: var(--white);
+        }
+        .feature__content ul {
+            list-style: none;
+           
+        }
+        .feature__content li{
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            color: var(--white);
+        }
+        .feature__content li::after {
+            position:absolute;
+            content:"";
+            left: 0;
+            top: 5px;
+            height: 12px;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        marquee img {
+            width:500px;
+            height: 300px;
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align:middle;
+        }
+        .footer {
+            background-color: var(--black);
+        }
+        .footer__container {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 2rem;
+        }
+        .footer__col img {
+           max-width:100px;
+        }
+        .footer__col ul {
+            list-style: none;
+        }
+        .footer__col li {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            color: var(--white);
+        }
+        .footer__col li::after {
+            position: absolute;
+            content:"";
+            left: 0;
+            top: 5px;
+            height: 12px;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        .footer__col h4 {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white); 
+        }
+        .socials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: fit-content;
+        }
+        .socials span {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2rem;
+            color: var(--white);
+            background-color: var(--text-light);
+            border-radius: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .socials span:hover {
+            background-color: var(--text-dark);
+        }
+        
+        .footer__col input {
+            margin-bottom: 2rem;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            outline:none;
+            border:none;
+            color: var(--white);
+            font-size: 1rem;
+            background-color: var(--text-light);
+        }
+        .footer__col input::placeholder {
+            color: var(--white);
+        }
+        .footer__col p {
+            color: var(--white);
+        }
+        </style>
+    </head>
+    <body>
+        <h2 class="main__heading">
+            <span class="red">R</span>oyal Enfield Motorcycles</h2>
+        <nav>
+            <div class="nav__logo">
+                <img src="relogo.png" alt="logo">
+            </div>
+            <ul class="nav__links">
+                <li class="link"><a href="https://www.royalenfield.com/in/en/service">SERVICES</a></li>
+                <li class="link"><a href="https://www.royalenfield.com/in/en/locate-us/dealers/">STORES</a></li>
+                <li class="link"><a href="https://www.royalenfield.com/in/en/support/contact-us/">CONTACT</a></li>
+            </ul>
+        </nav>
+        <header class="section__container header__container">
+            <img src="header.webp" alt="header">
+        </header>
+        <section class="section__container story__container">
+            <h2 class="section__header">THE ROYAL STORY</h2>
+         <p>
+            The story of Royal Enfield motorcycles is a tale of resilience, reinvention, and passion that stretches over a century. Here’s a look at how Royal Enfield went from British roots to becoming one of the most iconic motorcycle brands in the world.The story of Royal Enfield began in 1893 in Redditch, Worcestershire, England. Initially, it wasn’t a motorcycle company; instead, it was a small arms and bicycle company called The Enfield Manufacturing Company Ltd.
+         </p> 
+         <p>
+            This first Royal Enfield wasn’t a motorcycle as we know it today but rather a motorized bicycle. It had a small, single-cylinder 239cc engine mounted on a reinforced bicycle frame. The engine was placed above the front wheel, driving the rear wheel via a belt. This unusual front-mounted engine gave it a distinct look and a slight forward weight bias.
+         </p> 
+         <p>
+            Enfield’s first bike was crafted with precision and a focus on reliability, reflecting the company’s roots in arms manufacturing. The company's slogan, "Made like a gun," underscored the durability and ruggedness built into each model—a quality that soon became a defining feature of Royal Enfield motorcycles. This first model paved the way for Royal Enfield’s development of heavier motorcycles, gradually increasing engine size and capacity. The bike quickly earned a reputation as a sturdy, dependable vehicle, capturing the interest of both recreational riders and utility users, including police and military forces.
+         </p> 
+        </section> 
+        <section class="section__container evolution_container">
+            <h2 class="section__header">THE EVOLUTION OF ROYAL ENFIELD</h2>
+            <div class="evolution__grid">
+                <div class="evolution__image">
+                    <img src="evolution.webp" alt="evolution">
+                </div>
+                <div class="evolution__content">
+                    <p>The Bullet’s introduction marked a significant shift for Royal Enfield, as it was designed with a single-cylinder, four-stroke engine that became its hallmark. The 1931 Bullet was offered in several displacements, including 250cc, 350cc, and later a 500cc version, catering to a range of riders and solidifying the model's appeal across diverse groups. The bike’s design emphasized durability and ease of maintenance, essential qualities during a time when motorcycles were increasingly used for both daily commuting and long-distance touring.</p>
+                </div>
+            </div>
+        </section>   
+        <section class="feature">
+            <div class="section__container feature__container">
+                <div class="feature__image">
+                    <img src="feat.jpg" alt="feature">
+                </div>
+                <div class="feature__content">
+                    <h2 class="section__header">FEATURES</h2>
+                    <ul>
+                        <li>SINGLE CYLINDER, FOUR STROKE, LIQUID COOLED, SI ENGINE, DOHC BSVVI COMPLAINT</li>
+                    <li>CONSTANT MESH 6 SPEED</li>
+                    <li>MONO SHOCK ABSORBER, 7 STEP ADJUSTABLE</li>
+                    <li>DISC WITH FLOATING CALIPER AND ABS</li>
+                    <li>DOUBLE CRADLE TUBULAR FRAME</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section__container gallery__container">
+            <h2 class="section__header">GALLERY</h2>
+        </section>
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+                    <img src="gallery.jpg" alt="gallery" width="150" height="5">
+                    <img src="galler1.webp" alt="gallery">
+                    <img src="galler2.jpeg" alt="gallery">
+                    <img src="galler3.webp" alt="gallery">
+                    <img src="galler4.webp" alt="gallery">
+                    <img src="galler5.webp" alt="gallery">
+                    <img src="gallery.jpg" alt="gallery" width="150" height="5">
+                    <img src="galler1.webp" alt="gallery">
+                    <img src="galler2.jpeg" alt="gallery">
+                    <img src="galler3.webp" alt="gallery">
+                    <img src="galler4.webp" alt="gallery">
+                    <img src="galler5.webp" alt="gallery">
+        </marquee>
+        <footer class="footer">
+            <div class="section__container footer__container">
+                <div class="footer__col">
+                    <img src="footer.jpg" alt="footer logo"> 
+                </div>
+                <div class="footer__col">
+                    <ul>
+                     <li>BOOK A TEST RIDE</li> 
+                     <li>DEALER LOCATOR</li>
+                     <li>FINANCE OFFER</li> 
+                     <li>EXCHANGE YOUR BIKE</li>
+                     <li>CONTACT US</li>
+                    </ul>
+                </div>
+                <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+                <div class="footer__col">
+                    <h4>FOLLOW US</h4>
+                    <div class="socials">
+                        <a href="https://in.linkedin.com/company/royal-enfield">
+                        <span><i class="ri-linkedin-fill"></i></span>
+                        </a>
+                        <a href="https://in.pinterest.com/chinnabangaru35/royal-enfield/">
+                        <span><i class="ri-pinterest-line"></i></span>
+                        </a>
+                        <a href="https://twitter.com/royalenfieldin">
+                        <span><i class="ri-twitter-fill"></i></span>
+                        </a>
+                        <a href="https://www.facebook.com/RoyalEnfield/">
+                        <span><i class="ri-facebook-fill"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4>GET IN TOUCH</h4>
+                    <input type="text" placeholder="EMAIL"> 
+                </div>
+            </div>
+        </footer> 
+    </body>
+</html> 
